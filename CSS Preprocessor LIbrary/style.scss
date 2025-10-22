@@ -1,0 +1,100 @@
+// Variables
+$primary: #4caf50;
+$secondary: #2e7d32;
+$text-light: #fff;
+$padding: 10px 20px;
+
+// Mixin
+@mixin rounded($radius: 6px) {
+  border-radius: $radius;
+}
+
+// Global Styles
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+  color: #333;
+}
+
+// Header
+header {
+  background: $primary;
+  color: $text-light;
+  padding: 1rem;
+
+  h1 {
+    margin: 0;
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      padding: 0;
+
+      li a {
+        color: $text-light;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Main Section
+main {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+
+  .intro {
+    flex: 3;
+    background: white;
+    padding: 20px;
+    @include rounded(8px);
+
+    button {
+      background: $primary;
+      color: $text-light;
+      border: none;
+      padding: $padding;
+      cursor: pointer;
+      @include rounded;
+
+      &:hover {
+        background: $secondary;
+      }
+
+      &.outline {
+        background: transparent;
+        color: $primary;
+        border: 2px solid $primary;
+
+        &:hover {
+          background: $primary;
+          color: $text-light;
+        }
+      }
+    }
+  }
+
+  aside {
+    flex: 1;
+    background: #e8f5e9;
+    padding: 20px;
+    @include rounded(8px);
+  }
+}
+
+// Footer
+footer {
+  text-align: center;
+  background: $secondary;
+  color: $text-light;
+  padding: 10px;
+}
